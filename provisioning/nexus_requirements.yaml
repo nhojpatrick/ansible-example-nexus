@@ -1,1 +1,6 @@
 ---
+
+- name: "geerlingguy.java"
+  src: https://github.com/nhojpatrick/geerlingguy_ansible-role-java
+  version: use-become
+#- src: geerlingguy.java

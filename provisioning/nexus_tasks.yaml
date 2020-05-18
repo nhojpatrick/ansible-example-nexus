@@ -1,1 +1,5 @@
 ---
+
+- name: Install Java
+  include_role:
+    name: geerlingguy.java
