@@ -31,6 +31,16 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "provisioning/setup_vagrant.yaml"
     end
 
+    inst.vm.provision "ansible_local" do |ansible|
+      ansible.compatibility_mode = "2.0"
+
+      ansible.galaxy_role_file = "provisioning/nexus_requirements.yaml"
+      ansible.galaxy_roles_path = "/home/vagrant/.ansible/roles"
+      ansible.galaxy_command = "ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path}"
+
+      ansible.playbook = "provisioning/nexus_vagrant.yaml"
+    end
+
   end
 
 end

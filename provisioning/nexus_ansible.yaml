@@ -1,0 +1,10 @@
+---
+- name: Nexus Installation by Ansible
+  hosts: localhost
+  vars_files:
+    - nexus_vars.yaml
+
+  tasks:
+
+  - name: Nexus Installation Tasks
+    include_tasks: nexus_tasks.yaml
